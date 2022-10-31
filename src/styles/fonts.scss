@@ -1,0 +1,45 @@
+@mixin generateFontFaces($fontFamily, $weights) {
+    @each $fontPath,
+    $fontWeight in $weights {
+        $pathExtension: str-slice($fontPath, str-index($fontPath, ".") + 1);
+        $fontFormat: $pathExtension;
+
+        @if $pathExtension =="otf" {
+            $fontFormat: "opentype";
+        } @else if $pathExtension =="ttf" {
+            $fontFormat: "truetype";
+        }
+
+        @font-face {
+            font-family: $fontFamily;
+            src: url($fontPath) format($fontFormat);
+            font-weight: $fontWeight;
+            font-display: swap;
+
+            @if (str-index($fontPath, 'Italic')) {
+                font-style: italic;
+            }
+
+            @else {
+                font-style: normal;
+            }
+        }
+    }
+}
+
+@include generateFontFaces('MabryPro', (
+    '/fonts/MabryPro/MabryPro-Light.woff2': 300,
+    '/fonts/MabryPro/MabryPro-LightItalic.woff2': 300,
+    '/fonts/MabryPro/MabryPro-Regular.woff2': 400,
+    '/fonts/MabryPro/MabryPro-RegularItalic.woff2': 400,
+    '/fonts/MabryPro/MabryPro-Medium.woff2': 500,
+    '/fonts/MabryPro/MabryPro-MediumItalic.woff2': 500,
+    '/fonts/MabryPro/MabryPro-Bold.woff2': 700,
+    '/fonts/MabryPro/MabryPro-BoldItalic.woff2': 700,
+    '/fonts/MabryPro/MabryPro-Black.woff2': 900,
+    '/fonts/MabryPro/MabryPro-BlackItalic.woff2': 900
+));
+
+@include generateFontFaces('Ginger', (
+    '/fonts/Ginger/Ginger-Regular.woff': 400
+));

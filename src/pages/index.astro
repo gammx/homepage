@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/UI/Button.astro';
+---
+
+<Layout title="GAMMX">
+	<main class="flex flex-col">
+    <div class="w-full py-12 px-12 text-xs sm:px-24 flex justify-between uppercase">
+      <p>FullStack Dev</p>
+      <p>UI/UX Designer</p>
+    </div>
+    <div class="w-full relative pt-20 flex flex-col justify-center items-center">
+      <div class="absolute w-[300px] h-[300px] rounded-full bg-[#1f1f1f]" style="filter: blur(64px);"></div>
+      <div class="z-10 text-center">
+        <h1 class="text-7xl sm:text-[128px] font-display">GAMMX</h1>
+        <p class="text-center pt-4 pb-16 px-12 text-sm sm:w-[450px]">I'm just a software developer always looking to build amazing projects no matter what</p>
+        <Button>Take A Look</Button>
+      </div>
+    </div>
+	</main>
+</Layout>
