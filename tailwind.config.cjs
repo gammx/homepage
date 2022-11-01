@@ -2,7 +2,13 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			opacity: {
+				'2': '0.02',
+				'8': '0.08',
+				'25': '0.25',
+			}
+		},
 		fontFamily: {
 			sans: ['MabryPro', 'sans-serif'],
 			display: ['Ginger']

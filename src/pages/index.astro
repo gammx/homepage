@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/UI/Button.astro';
+import Section from '../components/UI/Section.astro';
+import Divider from '../components/UI/Divider.astro';
+import Skill from '../components/UI/Skill.astro';
+import stack from '../utils/stack';
 ---
 
 <Layout title="GAMMX">
@@ -9,7 +13,7 @@ import Button from '../components/UI/Button.astro';
       <p>FullStack Dev</p>
       <p>UI/UX Designer</p>
     </div>
-    <div class="w-full relative pt-20 flex flex-col justify-center items-center">
+    <div class="w-full relative pt-20 pb-40 flex flex-col justify-center items-center">
       <div class="absolute w-[300px] h-[300px] rounded-full bg-[#1f1f1f]" style="filter: blur(64px);"></div>
       <div class="z-10 text-center">
         <h1 class="text-7xl sm:text-[128px] font-display">GAMMX</h1>
@@ -17,5 +21,25 @@ import Button from '../components/UI/Button.astro';
         <Button>Take A Look</Button>
       </div>
     </div>
+    <Section>
+      <div class="flex flex-col items-center">
+        <Divider>WHO AM I</Divider>
+        <p class="text-xl mt-2 mb-6 text-white/60">
+          I'm a <span class="text-white/100">full-stack web developer</span> and <span class="text-white/100">UI/UX designer</span> based in Los Cabos, MX.
+        </p>
+        <Button>Download Resume</Button>
+      </div>
+    </Section>
+    <Section>
+      <Divider>WHAT DO I USE</Divider>
+      <p class="mt-2 mb-4 text-sm">Here's a list of the technologies I work with, the brighter, the better I am.</p>
+      <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4">
+        {stack.map((skill) => (
+          <Skill level={skill.level} color={skill.color}>
+            <img src={skill.src} alt={skill.title} />
+          </Skill>
+        ))}
+      </div>
+    </Section>
 	</main>
 </Layout>
