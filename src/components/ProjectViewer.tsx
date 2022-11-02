@@ -40,7 +40,7 @@ const slideDownAnimation = {
 };
 
 const animationConfig = {
-  config: { duration: 200 }
+  config: { duration: 150 }
 };
 
 const ProjectViewer = () => {
@@ -50,11 +50,11 @@ const ProjectViewer = () => {
 
   const onMouseEnterHandler = (project: ProjectItem) => {
     if (project !== hoveredProject) {
+      setHoveredProject(project)
       api.start({
         ...slideDownAnimation,
         ...animationConfig,
-        onRest: () => {
-          setHoveredProject(project)
+        onResolve: () => {
           api.start({ ...slideUpAnimation, ...animationConfig })
         }
       })
