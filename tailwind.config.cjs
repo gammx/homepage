@@ -11,7 +11,8 @@ module.exports = {
 		},
 		fontFamily: {
 			sans: ['MabryPro', 'sans-serif'],
-			display: ['Ginger']
+			display: ['Ginger'],
+			wide: ['FaktumWide']
 		},
 		colors: {
 			'interactive-hover': '#1B1B1B',

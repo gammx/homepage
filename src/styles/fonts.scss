@@ -43,3 +43,9 @@
 @include generateFontFaces('Ginger', (
     '/fonts/Ginger/Ginger-Regular.woff': 400
 ));
+
+@include generateFontFaces('FaktumWide', (
+    '/fonts/FaktumWide/FaktumWide-Light.otf': 300,
+    '/fonts/FaktumWide/FaktumWide-Regular.otf': 400,
+    '/fonts/FaktumWide/FaktumWide-ExtraBold.otf': 900
+));

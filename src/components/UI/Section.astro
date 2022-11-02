@@ -1,3 +1,7 @@
-<div class="w-full py-12 px-12 sm:px-24">
+---
+const { class: className } = Astro.props;
+---
+
+<div class:list={["w-full py-12 px-12 sm:px-24", className]}>
   <slot />
 </div>

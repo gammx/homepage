@@ -14,3 +14,13 @@ body {
     background-color: #0B0B0B;
     color: #f1f1f1;
 }
+
+.outlined-text {
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.hoverable {
+    cursor: url('/cursor_hover.svg'), auto;
+}

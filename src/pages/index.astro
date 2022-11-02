@@ -6,6 +6,7 @@ import Divider from '../components/UI/Divider.astro';
 import Skill from '../components/UI/Skill.astro';
 import stack from '../utils/stack';
 import Marquee from '../components/Marquee';
+import ProjectViewer from '../components/ProjectViewer';
 ---
 
 <Layout title="GAMMX">
@@ -22,14 +23,12 @@ import Marquee from '../components/Marquee';
         <Button>Take A Look</Button>
       </div>
     </div>
-    <Section>
-      <div class="flex flex-col items-center">
-        <Divider>WHO AM I</Divider>
-        <p class="text-xl mt-2 mb-6 text-white/60">
-          I'm a <span class="text-white/100">full-stack web developer</span> and <span class="text-white/100">UI/UX designer</span> based in Los Cabos, MX.
-        </p>
-        <Button>Download Resume</Button>
-      </div>
+    <Section class="flex flex-col items-center">
+      <Divider>WHO AM I</Divider>
+      <p class="text-xl mt-2 mb-6 text-white/60">
+        I'm a <span class="text-white/100">full-stack web developer</span> and <span class="text-white/100">UI/UX designer</span> based in Los Cabos, MX.
+      </p>
+      <Button>Download Resume</Button>
     </Section>
     <Section>
       <Divider>WHAT DO I USE</Divider>
@@ -42,7 +41,7 @@ import Marquee from '../components/Marquee';
         ))}
       </div>
     </Section>
-    <div class="mt-6">
+    <div class="my-6">
       <Marquee client:load className="font-display">
         <span>FRONTEND</span>
         <span>BACKEND</span>
@@ -56,5 +55,10 @@ import Marquee from '../components/Marquee';
         ))}
       </Marquee>
     </div>
+    <Section class="flex flex-col items-center">
+      <Divider>PROJECTS</Divider>
+      <div class="text-sm my-2">I'm currently working on filling this up</div>
+      <ProjectViewer client:load />
+    </Section>
 	</main>
 </Layout>
