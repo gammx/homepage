@@ -50,12 +50,12 @@ const ProjectViewer = () => {
 
   const onMouseEnterHandler = (project: ProjectItem) => {
     if (project !== hoveredProject) {
-      api({
+      api.start({
         ...slideDownAnimation,
         ...animationConfig,
         onRest: () => {
           setHoveredProject(project)
-          api({ ...slideUpAnimation, ...animationConfig })
+          api.start({ ...slideUpAnimation, ...animationConfig })
         }
       })
     }
