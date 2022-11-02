@@ -5,6 +5,7 @@ import Section from '../components/UI/Section.astro';
 import Divider from '../components/UI/Divider.astro';
 import Skill from '../components/UI/Skill.astro';
 import stack from '../utils/stack';
+import Marquee from '../components/Marquee';
 ---
 
 <Layout title="GAMMX">
@@ -41,5 +42,19 @@ import stack from '../utils/stack';
         ))}
       </div>
     </Section>
+    <div class="mt-6">
+      <Marquee client:load className="font-display">
+        <span>FRONTEND</span>
+        <span>BACKEND</span>
+        <span>UI/UX</span>
+        <span>RESPONSIVE</span>
+        <span>PERFORMANT</span>
+      </Marquee>
+      <Marquee client:load direction="right" className="font-light uppercase">
+        {stack.map((skill) => (
+          <span>{skill.title}</span>
+        ))}
+      </Marquee>
+    </div>
 	</main>
 </Layout>
