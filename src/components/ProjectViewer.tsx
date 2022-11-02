@@ -92,8 +92,8 @@ const ProjectViewer = () => {
           </div>
         </div>
       </div>
-      <animated.div className="flex flex-col sm:flex-row font-wide text-sm font-light mt-6 items-start gap-5 max-w-[350px] sm:max-w-full" style={styles}>
-        <div className="flex items-center w-full">
+      <animated.div className="flex flex-col sm:flex-row font-wide text-sm font-light mt-6 items-start max-w-[350px] sm:max-w-full" style={styles}>
+        <div className="flex items-center">
           <span>{hoveredProject.createdAt}</span>
           <div className="ml-5 w-full sm:w-[75px] h-px bg-white"></div>
         </div>
