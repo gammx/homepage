@@ -3,11 +3,11 @@ html {
     padding: 0;
     box-sizing: border-box;
     @apply font-light;
-    cursor: url('/cursor.svg'), auto;
+    cursor: none;
 }
 
 button {
-    cursor: url('/cursor_pointer.svg'), auto;
+    cursor: none;
 }
 
 body {
@@ -21,6 +21,34 @@ body {
     -webkit-text-stroke-color: white;
 }
 
-.hoverable {
-    cursor: url('/cursor_hover.svg'), auto;
+.cursor-point {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: #969696;
+    border-radius: 50%;
+    transition: all .08s ease;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-aura {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #727272;
+    border-radius: 50%;
+    transition: all .1s ease;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.cursor-point--pointer {
+    background-color: #f1f1f1;
+}
+
+.cursor-aura--pointer {
+    background: #383838;
+    border-color: #383838;
+    opacity: .5;
 }
