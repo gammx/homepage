@@ -7,6 +7,9 @@ module.exports = {
 				'2': '0.02',
 				'8': '0.08',
 				'25': '0.25',
+			},
+			fontSize: {
+				'2xs': '0.625rem',
 			}
 		},
 		fontFamily: {
@@ -20,7 +23,7 @@ module.exports = {
 			'interactive-hover': '#1B1B1B',
 			'white': '#f1f1f1',
 			'primary': '#CECECE'
-		}
+		},
 	},
 	plugins: [],
 }

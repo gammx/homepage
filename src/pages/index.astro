@@ -1,63 +1,94 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Button from '../components/UI/Button.astro';
-import Section from '../components/UI/Section.astro';
-import Divider from '../components/UI/Divider.astro';
-import Skill from '../components/UI/Skill.astro';
-import stack from '../utils/stack';
-import Marquee from '../components/UI/Marquee';
-import ProjectViewer from '../components/ProjectViewer';
-import PerspectiveGesture from '../components/PerspectiveGesture';
-import BannerDividerBottom from '../components/Banner/BannerDividerBottom';
-import BannerDividerTop from '../components/Banner/BannerDividerTop';
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/UI/Button.astro";
+import Section from "../components/UI/Section.astro";
+import Divider from "../components/UI/Divider.astro";
+import Skill from "../components/UI/Skill.astro";
+import stack from "../utils/stack";
+import Marquee from "../components/UI/Marquee";
+import ProjectViewer from "../components/ProjectViewer";
+import PerspectiveGesture from "../components/PerspectiveGesture";
+import BannerDividerBottom from "../components/Banner/BannerDividerBottom";
+import BannerDividerTop from "../components/Banner/BannerDividerTop";
 
 const currentYear = new Date().getFullYear();
 ---
 
 <Layout title="GAMMX">
-	<main class="flex flex-col">
-    <div class="w-full pt-16 px-24">
+  <main class="flex flex-col">
+    <div class="w-full pt-16 px-8 sm:px-16 md:px-24">
       <BannerDividerTop client:load />
-      <div class="flex text-primary">
-        <div class="font-mono uppercase">
+      <div class="flex flex-wrap justify-between items-center text-primary">
+        <!-- --- OCCUPATION --- -->
+        <div class="font-mono uppercase text-2xs sm:text-[1.4vw] flex items-center justify-between w-full sm:w-auto gap-4 xl:block xl:text-base">
           <p>Software Developer</p>
           <p>UI/UX Designer</p>
-          <p class="text-white/50 text-xs mt-1.5">&copy; {currentYear}</p>
+          <p class="text-white/50 text-xs xl:mt-1.5">&copy; {currentYear}</p>
         </div>
-        <div class="flex-1 flex justify-between ml-6">
+        <div class="w-full xl:hidden"></div>
+        <!-- --- HEADING --- -->
+        <PerspectiveGesture client:load>
+          <h1 class="font-brand font-bold text-[9vw] md:text-[6.2vw] leading-[64px]">
+            GAMMX
+          </h1>
+        </PerspectiveGesture>
+        <!-- --- BADGES --- -->
+        <div class="hidden md:flex flex-col justify-center gap-1 font-mono text-xs">
           <PerspectiveGesture client:load>
-            <h1 class="font-brand font-bold text-[80px] leading-[64px]">GAMMX</h1>
+            <div
+              class="hidden lg:flex justify-center items-center h-[22px] border border-primary/70 rounded-full"
+            >
+              YAHIR GOMEZ NOY.
+            </div>
           </PerspectiveGesture>
-          <div class="ml-8 h-16 gap-1 flex flex-col font-mono text-xs">
+          <div class="flex gap-1">
             <PerspectiveGesture client:load>
-              <div class="border border-primary/70 rounded-full flex justify-center h-[22px] items-center">
-                YAHIR GOMEZ NOY.
+              <img src="/22/22_thegrid.svg" alt="THE GRID 22" />
+            </PerspectiveGesture>
+            <PerspectiveGesture client:load>
+              <div
+                class="hidden min-[850px]:flex flex-col justify-center rounded-md border border-primary/70 px-1 py-[2px] tracking-[0.04em]"
+              >
+                <span># 0B0B0B</span>
+                <span># CECECE</span>
               </div>
             </PerspectiveGesture>
-            <div class="flex gap-3.5">
-              <PerspectiveGesture client:load>
-                <img src="/22/22_thegrid.svg" alt="THE GRID 22">
-              </PerspectiveGesture>
-              <PerspectiveGesture client:load>
-                <div class="border border-primary/70 rounded-md flex flex-col justify-center px-1 py-[2px] tracking-[0.04em]">
-                  <span># 0B0B0B</span>
-                  <span># CECECE</span>
-                </div>
-              </PerspectiveGesture>
-            </div>
           </div>
-          <img src="/22/22_shape.png" alt="22">
-          <h1 class="font-brand font-bold text-[80px] leading-[64px]">22</h1>
+        </div>
+        <!-- --- SHAPE AND NUMBER --- -->
+        <img
+          src="/22/22_shape.png"
+          alt="22"
+          class="hidden md:block w-[4.8vw] h-[4.8vw]"
+        />
+        <div>
+          <h1 class="font-brand font-bold text-[9vw] md:text-[6.2vw] leading-[64px]">
+            22
+          </h1>
         </div>
       </div>
-      <div class="mt-4 flex justify-between">
-        <img src="/22/22_color.png" alt="">
-        <img src="/22/22_creator.png" alt="">
+      <div class="grid grid-flow-row sm:grid-flow-col gap-3 sm:gap-8 sm:mt-4 overflow-hidden">
+        <img
+          src="/22/22_color.png"
+          alt="Gradient (tones of green, white and gray) background"
+          class="col-span-12 sm:col-span-8 w-full sm:h-full"
+        />
+        <img
+          src="/22/22_creator.png"
+          alt="Me holding a phone, sitting in front of a computer"
+          class="col-span-12 sm:col-span-4 w-full sm:h-full"
+        />
       </div>
-      <div class="py-6 flex gap-4 items-center font-mono uppercase text-primary">
-        <img src="/22/22_code.svg" alt="">
-        <span>Always looking for the most dope projects</span>
-        <div class="flex-1">
+      <div class="flex flex-wrap items-center sm:gap-4 py-6 font-mono uppercase text-primary">
+        <img
+          src="/22/22_code.svg"
+          alt="Bar code with 'GAMMX' as value"
+          class="w-[48px] sm:w-auto"
+        />
+        <span class="flex-1 sm:flex-initial text-xs sm:text-base ml-4 sm:ml-0">
+          Always looking for the most dope projects
+        </span>
+        <div class="sm:flex-1 w-full sm:w-auto mt-4 sm:mt-0">
           <BannerDividerBottom client:load />
         </div>
       </div>
@@ -65,19 +96,28 @@ const currentYear = new Date().getFullYear();
     <Section class="flex flex-col items-center">
       <Divider>WHO AM I</Divider>
       <p class="text-center lg:text-left text-xl mt-2 mb-6 text-white/60">
-        I'm a <span class="text-white/100">full-stack web developer</span> and <span class="text-white/100">UI/UX designer</span> based in Los Cabos, MX.
+        I'm a <span class="text-white/100">full-stack web developer</span> and <span
+          class="text-white/100">UI/UX designer</span
+        > based in Los Cabos, MX.
       </p>
       <Button>Download Resume</Button>
     </Section>
     <Section>
       <Divider>WHAT DO I USE</Divider>
-      <p class="mt-2 mb-4 text-sm">Here's a list of the technologies I work with, the brighter, the better I am.</p>
-      <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4">
-        {stack.map((skill) => (
-          <Skill level={skill.level} color={skill.color}>
-            <img src={skill.src} alt={skill.title} />
-          </Skill>
-        ))}
+      <p class="mt-2 mb-4 text-sm">
+        Here's a list of the technologies I work with, the brighter, the better
+        I am.
+      </p>
+      <div
+        class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4"
+      >
+        {
+          stack.map((skill) => (
+            <Skill level={skill.level} color={skill.color}>
+              <img src={skill.src} alt={skill.title} />
+            </Skill>
+          ))
+        }
       </div>
     </Section>
     <div class="my-6">
@@ -89,9 +129,7 @@ const currentYear = new Date().getFullYear();
         <span>PERFORMANT</span>
       </Marquee>
       <Marquee client:load direction="right" className="font-sans uppercase">
-        {stack.map((skill) => (
-          <span>{skill.title}</span>
-        ))}
+        {stack.map((skill) => <span>{skill.title}</span>)}
       </Marquee>
     </div>
     <Section class="flex flex-col items-center">
@@ -99,5 +137,5 @@ const currentYear = new Date().getFullYear();
       <div class="text-sm my-2">I'm currently working on filling this up</div>
       <ProjectViewer client:load />
     </Section>
-	</main>
+  </main>
 </Layout>
