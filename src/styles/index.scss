@@ -3,11 +3,6 @@ html {
     padding: 0;
     box-sizing: border-box;
     @apply font-light;
-    cursor: none;
-}
-
-button {
-    cursor: none;
 }
 
 body {
@@ -27,9 +22,9 @@ body {
     height: 2px;
     background: #969696;
     border-radius: 50%;
-    transition: all .08s ease;
     pointer-events: none;
     z-index: 9999;
+    display: none;
 }
 
 .cursor-aura {
@@ -38,9 +33,9 @@ body {
     height: 20px;
     border: 1px solid #727272;
     border-radius: 50%;
-    transition: all .1s ease;
     pointer-events: none;
     z-index: 9998;
+    display: none;
 }
 
 .cursor-point--pointer {
@@ -51,4 +46,13 @@ body {
     background: #383838;
     border-color: #383838;
     opacity: .5;
+}
+
+@media only screen and (min-width: 700px) {
+    .cursor-point, .cursor-aura {
+        display: block;
+    }
+    * {
+        cursor: none !important;
+    }
 }

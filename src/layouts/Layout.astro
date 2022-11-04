@@ -44,8 +44,8 @@ const { title } = Astro.props;
 
 			const moveMouse = (e: MouseEvent) => {
 				if (cursorPoint && cursorAura) {
-					cursorPoint.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-					cursorAura.style.transform = `translate3d(${e.clientX - 10}px, ${e.clientY - 10}px, 0)`;
+					cursorPoint.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+					cursorAura.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
 				}
 			};
 
