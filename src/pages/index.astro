@@ -5,22 +5,61 @@ import Section from '../components/UI/Section.astro';
 import Divider from '../components/UI/Divider.astro';
 import Skill from '../components/UI/Skill.astro';
 import stack from '../utils/stack';
-import Marquee from '../components/Marquee';
+import Marquee from '../components/UI/Marquee';
 import ProjectViewer from '../components/ProjectViewer';
+import PerspectiveGesture from '../components/PerspectiveGesture';
+import BannerDividerBottom from '../components/Banner/BannerDividerBottom';
+import BannerDividerTop from '../components/Banner/BannerDividerTop';
+
+const currentYear = new Date().getFullYear();
 ---
 
 <Layout title="GAMMX">
 	<main class="flex flex-col">
-    <div class="w-full py-12 px-12 text-xs sm:px-24 flex justify-between uppercase">
-      <p>FullStack Dev</p>
-      <p>UI/UX Designer</p>
-    </div>
-    <div class="w-full relative pt-20 pb-40 flex flex-col justify-center items-center">
-      <div class="absolute w-[300px] h-[300px] rounded-full bg-[#1f1f1f]" style="filter: blur(64px);"></div>
-      <div class="z-10 text-center">
-        <h1 class="text-7xl sm:text-[128px] font-display">GAMMX</h1>
-        <p class="text-center pt-4 pb-16 px-12 text-sm sm:w-[450px]">I'm just a software developer always looking to build amazing projects no matter what</p>
-        <Button>Take A Look</Button>
+    <div class="w-full pt-16 px-24">
+      <BannerDividerTop client:load />
+      <div class="flex text-primary">
+        <div class="font-mono uppercase">
+          <p>Software Developer</p>
+          <p>UI/UX Designer</p>
+          <p class="text-white/50 text-xs mt-1.5">&copy; {currentYear}</p>
+        </div>
+        <div class="flex-1 flex justify-between ml-6">
+          <PerspectiveGesture client:load>
+            <h1 class="font-brand font-bold text-[80px] leading-[64px]">GAMMX</h1>
+          </PerspectiveGesture>
+          <div class="ml-8 h-16 gap-1 flex flex-col font-mono text-xs">
+            <PerspectiveGesture client:load>
+              <div class="border border-primary/70 rounded-full flex justify-center h-[22px] items-center">
+                YAHIR GOMEZ NOY.
+              </div>
+            </PerspectiveGesture>
+            <div class="flex gap-3.5">
+              <PerspectiveGesture client:load>
+                <img src="/22/22_thegrid.svg" alt="THE GRID 22">
+              </PerspectiveGesture>
+              <PerspectiveGesture client:load>
+                <div class="border border-primary/70 rounded-md flex flex-col justify-center px-1 py-[2px] tracking-[0.04em]">
+                  <span># 0B0B0B</span>
+                  <span># CECECE</span>
+                </div>
+              </PerspectiveGesture>
+            </div>
+          </div>
+          <img src="/22/22_shape.png" alt="22">
+          <h1 class="font-brand font-bold text-[80px] leading-[64px]">22</h1>
+        </div>
+      </div>
+      <div class="mt-4 flex justify-between">
+        <img src="/22/22_color.png" alt="">
+        <img src="/22/22_creator.png" alt="">
+      </div>
+      <div class="py-6 flex gap-4 items-center font-mono uppercase text-primary">
+        <img src="/22/22_code.svg" alt="">
+        <span>Always looking for the most dope projects</span>
+        <div class="flex-1">
+          <BannerDividerBottom client:load />
+        </div>
       </div>
     </div>
     <Section class="flex flex-col items-center">
@@ -49,7 +88,7 @@ import ProjectViewer from '../components/ProjectViewer';
         <span>RESPONSIVE</span>
         <span>PERFORMANT</span>
       </Marquee>
-      <Marquee client:load direction="right" className="font-light uppercase">
+      <Marquee client:load direction="right" className="font-sans uppercase">
         {stack.map((skill) => (
           <span>{skill.title}</span>
         ))}

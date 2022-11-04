@@ -49,3 +49,15 @@
     '/fonts/FaktumWide/FaktumWide-Regular.otf': 400,
     '/fonts/FaktumWide/FaktumWide-ExtraBold.otf': 900
 ));
+
+@include generateFontFaces('Miedinger', (
+    '/fonts/Miedinger/Miedinger-Regular.woff': 400,
+    '/fonts/Miedinger/Miedinger-Regular.woff2': 400,
+    '/fonts/Miedinger/Miedinger-Bold.woff': bold,
+    '/fonts/Miedinger/Miedinger-Bold.woff2': bold,
+));
+
+@include generateFontFaces('IBM Plex Mono', (
+    '/fonts/IBMPlexMono/IBMPlexMono-Light.woff2': 300,
+    '/fonts/IBMPlexMono/IBMPlexMono-Regular.woff2': 400,
+));

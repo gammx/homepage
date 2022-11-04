@@ -12,11 +12,14 @@ module.exports = {
 		fontFamily: {
 			sans: ['MabryPro', 'sans-serif'],
 			display: ['Ginger'],
-			wide: ['FaktumWide']
+			wide: ['FaktumWide'],
+			mono: ['IBM Plex Mono'],
+			brand: ['Miedinger']
 		},
 		colors: {
 			'interactive-hover': '#1B1B1B',
 			'white': '#f1f1f1',
+			'primary': '#CECECE'
 		}
 	},
 	plugins: [],
