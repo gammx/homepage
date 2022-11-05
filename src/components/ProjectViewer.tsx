@@ -83,7 +83,7 @@ const ProjectViewer = () => {
                 })}>00{index + 1}</span>
                 {/** Name of the project */}
                 <div
-                  className={cn("font-wide ml-8 sm:ml-12 text-5xl sm:text-7xl font-black uppercase transition-all duration-200", {
+                  className={cn("font-display ml-8 sm:ml-12 text-5xl sm:text-7xl font-black uppercase transition-all duration-200", {
                     'outlined-text': hoveredProject.name !== project.name,
                   })}
                 >{project.name}</div>
@@ -92,7 +92,7 @@ const ProjectViewer = () => {
           </div>
         </div>
       </div>
-      <animated.div className="flex flex-col sm:flex-row font-wide text-sm font-light mt-6 items-start max-w-[350px] sm:max-w-full" style={styles}>
+      <animated.div className="flex flex-col sm:flex-row font-display text-sm font-light mt-6 items-start max-w-[350px] sm:max-w-full" style={styles}>
         <div className="flex items-center">
           <span>{hoveredProject.createdAt}</span>
           <div className="ml-5 w-full sm:w-[75px] h-px bg-white"></div>

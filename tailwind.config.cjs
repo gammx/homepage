@@ -13,12 +13,10 @@ module.exports = {
 			}
 		},
 		fontFamily: {
-			sans: ['MabryPro', 'sans-serif'],
-			stylish: ['Ginger'],
+			brand: ['Miedinger'],
 			display: ['Sohnebreit'],
-			wide: ['FaktumWide'],
+			sans: ['MabryPro', 'sans-serif'],
 			mono: ['IBM Plex Mono', 'monospace'],
-			brand: ['Miedinger']
 		},
 		colors: {
 			'interactive-hover': '#1B1B1B',

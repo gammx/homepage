@@ -8,7 +8,7 @@ interface MarqueeProps extends React.HTMLProps<HTMLDivElement> {
 
 const Marquee: React.FC<MarqueeProps> = ({ className, direction = 'left', children }) => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden text-primary">
       <MarqueePrimitive gradient={false} direction={direction} speed={150} className="overflow-hidden">
         <p className={cn("text-9xl flex [&_*]:ml-16", className)}>
           {children}
