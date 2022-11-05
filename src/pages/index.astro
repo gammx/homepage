@@ -94,6 +94,7 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
     </div>
+    <!-- --- RESUME --- -->
     <Section class="flex flex-col items-center">
       <Divider>WHO AM I</Divider>
       <p class="text-center lg:text-left text-xl mt-2 mb-6 text-white/60">
@@ -103,6 +104,7 @@ const currentYear = new Date().getFullYear();
       </p>
       <Button>Download Resume</Button>
     </Section>
+    <!-- --- STACK --- -->
     <Section>
       <Divider>WHAT DO I USE</Divider>
       <p class="mt-2 mb-4 text-sm">
@@ -121,6 +123,7 @@ const currentYear = new Date().getFullYear();
         }
       </div>
     </Section>
+    <!-- --- MARQUEES --- -->
     <div class="my-6">
       <Marquee client:load className="font-stylish">
         <span>FRONTEND</span>
@@ -133,12 +136,14 @@ const currentYear = new Date().getFullYear();
         {stack.map((skill) => <span>{skill.title}</span>)}
       </Marquee>
     </div>
+    <!-- --- PROJECTS --- -->
     <Section class="flex flex-col items-center">
       <Divider>Projects</Divider>
       <div class="text-sm my-2">I'm currently working on filling this up</div>
       <ProjectViewer client:load />
     </Section>
-    <div class="w-full grid grid-flow-col grid-cols-2 h-52 border-t border-primary">
+    <!-- --- SECTION LINKS --- -->
+    <div class="w-full grid grid-rows-2 sm:grid-rows-1 sm:grid-flow-col sm:grid-cols-2 h-52 border-t border-primary">
       <SectionLink
         client:visible
         title="About Me"

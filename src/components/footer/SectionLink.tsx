@@ -34,18 +34,18 @@ const SectionLink: FC<SectionLinkProps> = ({
     <a
       onMouseEnter={() => iconApi.start(initialAnimation)}
       onMouseLeave={() => iconApi.start(leaveAnimation)}
-      className="section-links__item flex items-end justify-between border-r border-primary font-display font-semibold uppercase text-[48px] text-accent p-12 pointerable"
+      className="section-links__item flex items-end justify-between sm:border-r border-b border-primary font-display font-semibold uppercase text-2xl sm:text-[4vw] lg:text-5xl leading-none sm:leading-normal text-accent p-10 lg:p-12 pointerable"
       {...props}
     >
       <div className="relative">
-        <div className="absolute w-full flex justify-center">
+        <div className="absolute flex justify-center w-full">
           <animated.div style={iconStyles}>
-            <img src={iconSrc} alt="" />
+            <img src={iconSrc} alt="" className="h-20 sm:h-32" />
           </animated.div>
         </div>
         <p>{title}</p>
       </div>
-      <ArrowRightIcon className="relative -top-8" />
+      <ArrowRightIcon className="self-center sm:self-auto relative sm:-top-8" />
     </a>
   );
 };
