@@ -28,7 +28,7 @@ const { title } = Astro.props;
 			const cursorPoint: HTMLDivElement | null = document.querySelector(".cursor-point");
 			const cursorAura: HTMLDivElement | null = document.querySelector(".cursor-aura");
 
-			const pointerables = document.querySelectorAll(".pointerable");
+			const pointerables = document.querySelectorAll(".pointerable, a");
 
 			pointerables.forEach((pointerable) => {
 				pointerable.addEventListener("mouseenter", () => {

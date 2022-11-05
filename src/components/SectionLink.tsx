@@ -1,6 +1,6 @@
-import type { AnchorHTMLAttributes, DetailedHTMLProps, FC, HTMLAttributes } from 'react'
-import { useSpring, animated } from 'react-spring'
-import ArrowRightIcon from '../UI/ArrowRightIcon'
+import type { AnchorHTMLAttributes, DetailedHTMLProps, FC } from 'react';
+import { useSpring, animated } from 'react-spring';
+import ArrowRightIcon from './UI/ArrowRightIcon';
 
 type AnchorElementProps = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
 
@@ -34,7 +34,7 @@ const SectionLink: FC<SectionLinkProps> = ({
     <a
       onMouseEnter={() => iconApi.start(initialAnimation)}
       onMouseLeave={() => iconApi.start(leaveAnimation)}
-      className="section-links__item flex items-end justify-between sm:border-r border-b border-primary font-display font-semibold uppercase text-2xl sm:text-[4vw] lg:text-5xl leading-none sm:leading-normal text-accent p-10 lg:p-12 pointerable"
+      className="section-links__item flex items-end justify-between sm:border-r border-b border-primary font-display font-semibold uppercase text-2xl sm:text-[4vw] lg:text-5xl leading-none sm:leading-normal text-accent p-10 lg:p-12"
       {...props}
     >
       <div className="relative">

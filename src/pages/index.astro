@@ -10,7 +10,8 @@ import ProjectViewer from "../components/ProjectViewer";
 import PerspectiveGesture from "../components/PerspectiveGesture";
 import BannerDividerBottom from "../components/Banner/BannerDividerBottom";
 import BannerDividerTop from "../components/Banner/BannerDividerTop";
-import SectionLink from "../components/footer/SectionLink";
+import SectionLink from "../components/SectionLink";
+import Footer from "../components/layout/Footer.astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -157,5 +158,7 @@ const currentYear = new Date().getFullYear();
         href="#"
       ></SectionLink>
     </div>
+    <!-- --- FOOTER --- -->
+    <Footer />
   </main>
 </Layout>

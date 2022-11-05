@@ -23,8 +23,10 @@ module.exports = {
 		colors: {
 			'interactive-hover': '#1B1B1B',
 			'white': '#f1f1f1',
+			'smoke': '#0B0B0B',
+			'bones': '#EFEFEF',
 			'primary': '#CECECE',
-			'accent': '#00ED7B'
+			'accent': '#00ED7B',
 		},
 	},
 	plugins: [],
