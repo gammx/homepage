@@ -10,6 +10,7 @@ import ProjectViewer from "../components/ProjectViewer";
 import PerspectiveGesture from "../components/PerspectiveGesture";
 import BannerDividerBottom from "../components/Banner/BannerDividerBottom";
 import BannerDividerTop from "../components/Banner/BannerDividerTop";
+import SectionLink from "../components/footer/SectionLink";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -121,7 +122,7 @@ const currentYear = new Date().getFullYear();
       </div>
     </Section>
     <div class="my-6">
-      <Marquee client:load className="font-display">
+      <Marquee client:load className="font-stylish">
         <span>FRONTEND</span>
         <span>BACKEND</span>
         <span>UI/UX</span>
@@ -133,9 +134,23 @@ const currentYear = new Date().getFullYear();
       </Marquee>
     </div>
     <Section class="flex flex-col items-center">
-      <Divider>PROJECTS</Divider>
+      <Divider>Projects</Divider>
       <div class="text-sm my-2">I'm currently working on filling this up</div>
       <ProjectViewer client:load />
     </Section>
+    <div class="w-full grid grid-flow-col grid-cols-2 h-52 border-t border-primary">
+      <SectionLink
+        client:visible
+        title="About Me"
+        iconSrc="/22/3d_panoram_1.png"
+        href="#"
+      ></SectionLink>
+      <SectionLink
+        client:visible
+        title="Projects"
+        iconSrc="/22/3d_panoram_2.png"
+        href="#"
+      ></SectionLink>
+    </div>
   </main>
 </Layout>

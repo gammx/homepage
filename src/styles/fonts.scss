@@ -61,3 +61,8 @@
     '/fonts/IBMPlexMono/IBMPlexMono-Light.woff2': 300,
     '/fonts/IBMPlexMono/IBMPlexMono-Regular.woff2': 400,
 ));
+
+@include generateFontFaces('Sohnebreit', (
+    '/fonts/Sohnebreit/Sohnebreit-Halbfett.woff2': 600,
+    '/fonts/Sohnebreit/Sohnebreit-Fett.woff2': 800,
+));

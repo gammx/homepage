@@ -56,3 +56,17 @@ body {
         cursor: none !important;
     }
 }
+
+.section-links__item {
+    .arrow-icon {
+        transition: all .6s ease;
+    }
+    &:hover {
+        .arrow-icon {
+            transform: rotate(45deg);
+            path {
+                @apply fill-accent;
+            }
+        }
+    }
+}

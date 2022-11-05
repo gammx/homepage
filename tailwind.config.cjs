@@ -14,15 +14,17 @@ module.exports = {
 		},
 		fontFamily: {
 			sans: ['MabryPro', 'sans-serif'],
-			display: ['Ginger'],
+			stylish: ['Ginger'],
+			display: ['Sohnebreit'],
 			wide: ['FaktumWide'],
-			mono: ['IBM Plex Mono'],
+			mono: ['IBM Plex Mono', 'monospace'],
 			brand: ['Miedinger']
 		},
 		colors: {
 			'interactive-hover': '#1B1B1B',
 			'white': '#f1f1f1',
-			'primary': '#CECECE'
+			'primary': '#CECECE',
+			'accent': '#00ED7B'
 		},
 	},
 	plugins: [],
