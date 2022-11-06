@@ -1,0 +1,146 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Footer from "../components/layout/Footer.astro";
+import Layout from "./Layout.astro";
+import NetworkGrid from "../components/NetworkGrid";
+import featureList from "../utils/features";
+import techList from "../utils/stack";
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  description: string;
+  bannerSrc: string;
+  details: {
+    createdAt: string;
+    difficulty: string;
+    duration: string;
+  };
+  links: {
+    site?: string;
+    repo: string;
+  };
+  about: {
+    src: string;
+    category: string;
+    summary: string;
+    thoughts: string;
+  };
+  interludeSrc: string;
+  screenshots: string[];
+  features: string[];
+  stack: string[];
+}>;
+
+const {
+  title,
+  description,
+  bannerSrc,
+  details,
+  about,
+  interludeSrc,
+  screenshots,
+  features: pickedFeatures,
+  stack: pickedStack,
+  links
+} = Astro.props.frontmatter;
+
+const numberOfSplines = 4;
+const splineIndex = Math.floor(Math.random() * (numberOfSplines - 1 + 1)) + 1;
+const features = pickedFeatures.map((id) => featureList.find((feature) => feature.id === id));
+const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUpperCase() === title.toUpperCase()));
+---
+
+<Layout title={`GAMMX — ${title.toUpperCase()}`}>
+  <main>
+    <div class="h-[600px] text-smoke flex flex-col" style={`background-image: url(${bannerSrc})`}>
+      <div class="flex-1 flex flex-col justify-end pb-12 pl-5">
+        <h1 class="font-display font-extrabold uppercase text-[128px]">{title}</h1>
+        <p class="font-medium uppercase max-w-lg text-5xl">{description}</p>
+      </div>
+      <div class="flex border-t border-smoke font-mono font-medium text-sm uppercase p-5">
+        <time datetime={details.createdAt}>{details.createdAt.slice(0, 4)}</time>
+        <p class="ml-16">{details.difficulty}</p>
+        <p class="ml-24">~ {details.duration}</p>
+      </div>
+    </div>
+    
+    <section class="flex text-sm space-x-24 p-20">
+      <img src={about.src} alt="">
+      <div class="uppercase pt-3">
+        <b>{about.category}</b>
+        <p class="mt-1">About the project</p>
+        <p class="font-medium text-2xl mt-8">{about.summary}</p>
+        <svg width="49" height="8" viewBox="0 0 49 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-16 mb-8">
+          <path d="M48.3536 4.35355C48.5488 4.15829 48.5488 3.84171 48.3536 3.64645L45.1716 0.464466C44.9763 0.269204 44.6597 0.269204 44.4645 0.464466C44.2692 0.659728 44.2692 0.976311 44.4645 1.17157L47.2929 4L44.4645 6.82843C44.2692 7.02369 44.2692 7.34027 44.4645 7.53553C44.6597 7.7308 44.9763 7.7308 45.1716 7.53553L48.3536 4.35355ZM0 4.5H48V3.5H0L0 4.5Z" fill="#CECECE"/>
+        </svg>
+        <p class="font-medium text-xs">{about.thoughts}</p>
+      </div>
+    </section>
+    <!-- INTERLUDE -->
+    <div class="h-[300px] bg-cover" style={`background-image: url(${interludeSrc})`}></div>
+
+    <!-- GALLERY -->
+    <section class="flex flex-col items-center space-y-6 py-16">
+      {screenshots.map((src) => (
+        <img src={src} alt="" class="max-w-[800px]">
+      ))}
+    </section>
+
+    <!-- PROJECT FEATURES -->
+    <section class="grid grid-cols-12 border-t border-b border-primary">
+      <div class="pt-16 pb-44 px-8 col-span-8 border-r border-primary">
+        <h2 class="font-normal text-5xl uppercase mb-6">Gimme the loot.</h2>
+        <div class="grid grid-cols-2 grid-flow-dense auto-rows-auto space-y-5">
+          {features.map((feature) => feature && (
+            <div class="text-xs uppercase max-w-[350px]">
+              <b class="font-bold text-white">{feature.title}</b>
+              <p class="font-normal mt-2.5">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="col-span-4 flex items-center justify-center">
+        <img src={`/figures/spline_${splineIndex}.png`} alt="">
+      </div>
+    </section>
+
+    <!-- STACK  -->
+    <section class="grid grid-cols-2 uppercase pt-16">
+      <div class="px-8 pb-16">
+        <h2 class="font-normal text-5xl uppercase mb-6">What's in the box?</h2>
+        <p class="font-normal text-xs">This project was built using the following technologies.</p>
+        <div class="mt-8 grid grid-cols-8">
+          {stack.map((tech) => tech && (
+            <div class="flex justify-center items-center border border-[#1D1D1D] rounded w-12 h-12 grayscale hover:grayscale-0 transition-all duration-500" title={tech.title}>
+              <img src={tech.src} alt={`${tech.title} (logo)`} class="w-[18px]">
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="flex items-end">
+        <img src="/figures/open_cube.png" alt="">
+      </div>
+    </section>
+    <NetworkGrid
+      client:visible
+      lightMode
+      links={[
+        {
+          title: 'The Result',
+          href: links.site || '#',
+          iconSrc: '/figures/web_globe.png',
+          target: '_blank'
+        },
+        {
+          title: 'The Code',
+          href: links.repo,
+          iconSrc: '/figures/open_web_globe.png',
+          target: '_blank'
+        }
+      ]}
+    />
+    <slot />
+    <Footer />
+  </main>
+</Layout>

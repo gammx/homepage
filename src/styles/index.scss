@@ -60,6 +60,12 @@ body {
 .section-links__item {
     .arrow-icon {
         transition: all .6s ease;
+        &.light {
+            path { @apply fill-primary; }
+        }
+        &.dark {
+            path { @apply fill-smoke; }
+        }
     }
     &:hover {
         .arrow-icon {

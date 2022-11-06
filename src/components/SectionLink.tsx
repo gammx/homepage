@@ -1,12 +1,14 @@
 import type { AnchorHTMLAttributes, DetailedHTMLProps, FC } from 'react';
 import { useSpring, animated } from 'react-spring';
 import ArrowRightIcon from './UI/ArrowRightIcon';
+import cn from 'classnames';
 
 type AnchorElementProps = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
 
 interface SectionLinkProps extends AnchorElementProps {
-  title: string
-  iconSrc: string
+  title: string;
+  iconSrc: string;
+  lightMode?: boolean;
 }
 
 const initialAnimation = {
@@ -22,6 +24,8 @@ const leaveAnimation = {
 const SectionLink: FC<SectionLinkProps> = ({
   title,
   iconSrc,
+  lightMode = false,
+  target = '_self',
   ...props
 }) => {
   const [iconStyles, iconApi] = useSpring(() => ({
@@ -34,7 +38,11 @@ const SectionLink: FC<SectionLinkProps> = ({
     <a
       onMouseEnter={() => iconApi.start(initialAnimation)}
       onMouseLeave={() => iconApi.start(leaveAnimation)}
-      className="section-links__item flex items-end justify-between sm:border-r border-b border-primary font-display font-semibold uppercase text-2xl sm:text-[4vw] lg:text-5xl leading-none sm:leading-normal text-accent p-10 lg:p-12"
+      className={cn("section-links__item flex items-end justify-between sm:odd:border-r border-b font-display font-semibold uppercase text-2xl sm:text-[4vw] lg:text-5xl leading-none sm:leading-normal text-accent p-10 lg:p-12", {
+        'bg-smoke border-bones': !lightMode,
+        'bg-bones border-smoke': lightMode,
+      })}
+      target={target}
       {...props}
     >
       <div className="relative">
@@ -45,7 +53,12 @@ const SectionLink: FC<SectionLinkProps> = ({
         </div>
         <p>{title}</p>
       </div>
-      <ArrowRightIcon className="self-center sm:self-auto relative sm:-top-8" />
+      <ArrowRightIcon
+        className={cn("self-center sm:self-auto relative sm:-top-8", {
+          'dark': lightMode,
+          'light': !lightMode,
+        })}
+      />
     </a>
   );
 };

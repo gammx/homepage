@@ -54,6 +54,7 @@
 @include generateFontFaces('IBM Plex Mono', (
     '/fonts/IBMPlexMono/IBMPlexMono-Light.woff2': 300,
     '/fonts/IBMPlexMono/IBMPlexMono-Regular.woff2': 400,
+    '/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2': 500,
 ));
 
 @include generateFontFaces('Sohnebreit', (
