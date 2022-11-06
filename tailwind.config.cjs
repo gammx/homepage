@@ -24,7 +24,7 @@ module.exports = {
 			'smoke': '#0B0B0B',
 			'bones': '#EFEFEF',
 			'primary': '#CECECE',
-			'accent': '#F070C1',
+			'accent': '#FF5802',
 		},
 	},
 	plugins: [],
