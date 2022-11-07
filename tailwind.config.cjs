@@ -10,6 +10,9 @@ module.exports = {
 			},
 			fontSize: {
 				'2xs': '0.625rem',
+			},
+			screens: {
+				'xs': '330px'
 			}
 		},
 		fontFamily: {
