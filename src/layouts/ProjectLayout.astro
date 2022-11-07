@@ -63,9 +63,9 @@ const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUp
           <h1 class="font-display font-extrabold uppercase text-5xl xs:text-6xl sm:text-[12vw] lg:text-[8rem]">{title}</h1>
           <p class="font-medium uppercase max-w-xs sm:max-w-sm md:max-w-lg text-xl sm:text-[4vw] lg:text-5xl leading-none">{description}</p>
         </div>
-        <div class="flex items-end pr-24">
+        <div class="hidden sm:flex items-end pr-24">
           <a href={links.site} target="_blank" class="circle-arrow">
-            <img src="/figures/circle_arrow_down.png" alt="Black arrow inside a circle" class="hidden sm:block w-[80px] md:w-[128px]">
+            <img src="/figures/circle_arrow_down.png" alt="Black arrow inside a circle" class="w-[80px] md:w-[128px]">
           </a>
         </div>
       </div>
