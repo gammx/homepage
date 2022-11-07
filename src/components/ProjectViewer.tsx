@@ -83,7 +83,7 @@ const ProjectViewer = () => {
                 })}>00{index + 1}</span>
                 {/** Name of the project */}
                 <div
-                  className={cn("font-display ml-8 sm:ml-12 text-5xl sm:text-7xl font-black uppercase transition-all duration-200", {
+                  className={cn("font-display ml-8 sm:ml-12 text-5xl sm:text-7xl font-black uppercase text-white transition-all duration-200", {
                     'outlined-text': hoveredProject.name !== project.name,
                   })}
                 >{project.name}</div>
