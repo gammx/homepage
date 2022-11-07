@@ -80,3 +80,10 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+
+.circle-arrow {
+    transition: all 350ms ease;
+    &:hover {
+        transform: rotate(-90deg) scale(1.1);
+    }
+}
