@@ -3,10 +3,11 @@ import { useSpring, animated } from 'react-spring'
 import cn from 'classnames'
 
 interface ProjectItem {
-  name: string
-  description: string
-  createdAt: string,
-  thumbnailSrc: string
+  name: string;
+  description: string;
+  createdAt: string;
+  thumbnailSrc: string;
+  href: string;
 }
 
 const projects: ProjectItem[] = [
@@ -15,18 +16,21 @@ const projects: ProjectItem[] = [
     description: 'Content Management System (CMS) for a school.',
     createdAt: '2019',
     thumbnailSrc: '/projects/cbtis/thumbnail.png',
+    href: '#'
   },
   {
     name: "Cipriani's",
     description: "Landing page for an italian restaurant.",
     createdAt: '2022',
     thumbnailSrc: '/projects/ciprianis/thumbnail.png',
+    href: '/projects/cipriani'
   },
   {
     name: "Bisbee's",
     description: "Website for the world's most ambitious fishing tournament.",
     createdAt: '2022',
     thumbnailSrc: '/projects/bisbees/thumbnail.png',
+    href: '#'
   }
 ]
 
@@ -82,11 +86,12 @@ const ProjectViewer = () => {
                   'opacity-100': hoveredProject.name === project.name,
                 })}>00{index + 1}</span>
                 {/** Name of the project */}
-                <div
+                <a
+                  href={project.href}
                   className={cn("font-display ml-8 sm:ml-12 text-5xl sm:text-7xl font-black uppercase text-white transition-all duration-200", {
                     'outlined-text': hoveredProject.name !== project.name,
                   })}
-                >{project.name}</div>
+                >{project.name}</a>
               </div>
             ))}
           </div>
