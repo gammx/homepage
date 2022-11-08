@@ -48,7 +48,7 @@ const SectionLink: FC<SectionLinkProps> = ({
       <div className="relative">
         <div className="absolute flex justify-center w-full">
           <animated.div style={iconStyles}>
-            <img src={iconSrc} alt="3d abstract shape" className="h-20 sm:h-32" />
+            <img src={iconSrc} alt="3d abstract shape" className="h-20 w-auto sm:h-32" width="128" height="128" />
           </animated.div>
         </div>
         <p>{title}</p>

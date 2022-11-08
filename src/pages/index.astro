@@ -45,7 +45,7 @@ const currentYear = new Date().getFullYear();
           </PerspectiveGesture>
           <div class="flex gap-1">
             <PerspectiveGesture client:load>
-              <img src="/22/22_thegrid.svg" alt="THE GRID 22" />
+              <img src="/22/22_thegrid.svg" alt="THE GRID 22" width="60" height="36" />
             </PerspectiveGesture>
             <PerspectiveGesture client:load>
               <div
@@ -70,22 +70,32 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
       <div class="grid grid-flow-row sm:grid-flow-col gap-3 sm:gap-8 sm:mt-4 overflow-hidden">
-        <img
-          src="/22/22_banner.png"
-          alt="Gradient (tones of pink) background"
-          class="col-span-12 sm:col-span-8 w-full sm:h-full"
-        />
-        <img
-          src="/22/22_creator.png"
-          alt="Me holding a phone, sitting in front of a computer"
-          class="col-span-12 sm:col-span-4 w-full sm:h-full"
-        />
+        <picture class="col-span-12 sm:col-span-8">
+          <source srcset="/22/webp/22_banner.webp" type="image/webp" />
+          <source srcset="/22/22_banner.png" type="image/png" />
+          <img
+            src="/22/webp/22_banner.webp"
+            alt="Gradient (tones of pink) background"
+            class="w-full sm:h-full"
+          />
+        </picture>
+        <picture class="col-span-12 sm:col-span-4">
+          <source srcset="/22/webp/22_creator.webp" type="image/webp" />
+          <source srcset="/22/22_creator.png" type="image/png" />
+          <img
+            src="/22/webp/22_creator.webp"
+            alt="Me holding a phone, sitting in front of a computer"
+            class="w-full sm:h-full"
+          />
+        </picture>
       </div>
       <div class="flex flex-wrap items-center sm:gap-4 py-6 font-mono uppercase text-primary">
         <img
           src="/22/22_code.svg"
           alt="Bar code with 'GAMMX' as value"
-          class="w-[48px] sm:w-auto"
+          class="sm:w-auto"
+          width="48"
+          height="20"
         />
         <span class="flex-1 sm:flex-initial text-xs sm:text-base ml-4 sm:ml-0">
           Always looking for the most dope projects
@@ -118,7 +128,7 @@ const currentYear = new Date().getFullYear();
         {
           stack.map((skill) => (
             <Skill level={skill.level} color={skill.color}>
-              <img src={skill.src} alt={skill.title} />
+              <img src={skill.src} alt={skill.title} width="24" height="24" />
             </Skill>
           ))
         }
