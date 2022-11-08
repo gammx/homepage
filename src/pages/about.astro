@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/layout/Footer.astro';
+---
+
+<Layout title="GAMMX — ABOUT THE PROJECT">
+	<header class="bg-accent text-smoke flex items-center justify-center h-[200px] relative">
+		<h1 class="font-mono font-medium uppercase z-10">This is the About Me page</h1>
+		<div class="absolute left-[50%]">
+			<img src="/22/sign.png" alt="My sign" class="relative -left-[50%]">
+		</div>
+	</header>
+	<main class="py-6 px-8 sm:px-20 md:px-[24vw] font-normal">
+		<a href="/" class="font-mono uppercase underline text-xs hover:opacity-80">
+			&lt; Get Back
+		</a>
+		<article>
+			<section>
+				<h2 class="font-bold uppercase mb-4 mt-6">The Begginning</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi a, impedit quaerat architecto nobis veritatis dolorem esse nisi, libero, repellendus adipisci beatae corrupti! Nisi hic dicta nam quos qui?</p>
+			</section>
+			<section class="flex flex-col items-center mt-8">
+				<figure>
+					<img src="/22/early_days_photo.png" alt="Me, coding one of my first programs in 2016" class="mb-1">
+					<figcaption class="text-xs text-center uppercase font-mono opacity-50">Coding, taken in 2016.</figcaption>
+				</figure>
+			</section>
+			<section>
+				<div class="relative mb-4 mt-6">
+					<h2 class="font-bold uppercase relative z-10">The Motivation</h2>
+					<div class="absolute w-16 h-3 bg-accent left-12 top-3"></div>
+				</div>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima magni laborum ut, quod enim provident maxime facere vel ipsa expedita eos corrupti sunt esse libero unde rerum. Incidunt, sunt magnam?</p>
+			</section>
+			<section class="w-full my-12 flex flex-col items-center">
+				<b class="text-accent">DESIGN</b>
+				<p class="text-left font-display text-xs relative left-6 sm:left-10 max-w-[260px]">We design to give a message, it's not about how it looks, but what it tells to you.</p>
+			</section>
+			<section>
+				<div class="relative mb-4 mt-6">
+					<h2 class="font-bold uppercase">The Innovation</h2>
+					<div class="absolute w-20 h-3 bg-accent left-16 top-3"></div>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias similique sunt sit ipsa, eligendi rerum dolorem repudiandae nulla est labore molestiae ex reiciendis laudantium non culpa architecto. Cupiditate, veniam?</p>
+			</section>
+			<section>
+				<div class="relative mb-4 mt-6">
+					<h2 class="font-bold">destroy TO CREATE.</h2>
+					<div class="absolute w-9 h-2 bg-accent left-16 top-3"></div>
+				</div>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore odio illum tempora est maxime debitis, laborum numquam. Incidunt, temporibus debitis neque, sapiente tenetur animi, commodi quae nisi mollitia fugit deserunt.</p>
+			</section>
+		</article>
+	</main>
+	<footer class="font-mono font-normal text-xs opacity-50 my-12 px-8 sm:px-20 md:px-[24vw]">
+		<span>By Yahir Gomez — </span> <time datetime="2022-11-07">11/07/2022</time>
+	</footer>
+	<Footer />
+</Layout>
