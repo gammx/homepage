@@ -82,7 +82,7 @@ const ProjectViewer = () => {
               >
                 {/** # of the project */}
                 <span className={cn("text-xs font-light transition-opacity duration-200", {
-                  'opacity-50': hoveredProject.name !== project.name,
+                  'opacity-70': hoveredProject.name !== project.name,
                   'opacity-100': hoveredProject.name === project.name,
                 })}>00{index + 1}</span>
                 {/** Name of the project */}
