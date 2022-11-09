@@ -33,12 +33,12 @@ const PerspectiveGesture: FC<PerspectiveGestureProps> = ({ children }) => {
 
   useGesture(
     {
-      onMove: ({ xy: [px, py], dragging }) => !dragging && api({
+      onMove: ({ xy: [px, py], dragging }) => !dragging && api.start({
         rotateX: calcX(py, y.get()),
         rotateY: calcY(px, x.get()),
         scale: 1.1,
       }),
-      onHover: ({ hovering }) => !hovering && api({ rotateX: 0, rotateY: 0, scale: 1 }),
+      onHover: ({ hovering }) => !hovering && api.start({ rotateX: 0, rotateY: 0, scale: 1 }),
     },
     { domTarget, eventOptions: { passive: false }}
   );

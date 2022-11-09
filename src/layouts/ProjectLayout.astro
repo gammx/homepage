@@ -51,7 +51,7 @@ const features = pickedFeatures.map((id) => featureList.find((feature) => featur
 const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUpperCase() === title.toUpperCase()));
 ---
 
-<Layout title={`GAMMX — ${title.toUpperCase()}`}>
+<Layout title={`GAMMX — ${title.toUpperCase()}`} description={about.summary}>
   <main>
     <!-- BANNER -->
     <div
