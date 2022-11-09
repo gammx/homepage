@@ -13,8 +13,19 @@ import vercel from "@astrojs/vercel/serverless";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
+import compress from "astro-compress";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx()],
+  integrations: [
+    tailwind(),
+    react(),
+    mdx(),
+    compress({
+      img: false,
+      svg: false
+    })
+  ],
   output: "server",
   adapter: vercel()
 });
