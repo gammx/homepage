@@ -20,11 +20,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     react(),
-    mdx(),
-    compress({
-      img: false,
-      svg: false
-    })
+    mdx()
   ],
   output: "server",
   adapter: vercel()
