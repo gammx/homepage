@@ -30,6 +30,14 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
+    "postcss-load-config": "^4.0.1",
     "sass": "^1.55.0"
+  },
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "autoprefixer": {},
+      "cssnano": {}
+    }
   }
 }
