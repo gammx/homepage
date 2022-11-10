@@ -30,7 +30,7 @@ const projects: ProjectItem[] = [
     description: "Website for the world's most ambitious fishing tournament.",
     createdAt: '2022',
     thumbnailSrc: '/projects/bisbees/thumbnail.png',
-    href: '#'
+    href: '/projects/dev/bisbees'
   }
 ]
 
