@@ -1,5 +1,5 @@
-import type { FC, SVGProps } from "react";
-import cn from "classnames";
+import type { FC, SVGProps } from 'react';
+import cn from 'classnames';
 
 const ArrowRightIcon: FC<SVGProps<SVGSVGElement>> = ({
   className,

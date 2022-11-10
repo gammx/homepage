@@ -1,5 +1,5 @@
 import type React from 'react';
-import MarqueePrimitive from "react-fast-marquee";
+import MarqueePrimitive from 'react-fast-marquee';
 import cn from 'classnames';
 
 interface MarqueeProps extends React.HTMLProps<HTMLDivElement> {

@@ -1,6 +1,6 @@
-import React from 'react'
-import { useSpring, animated } from 'react-spring'
-import cn from 'classnames'
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import cn from 'classnames';
 
 interface ProjectItem {
   name: string;
@@ -32,7 +32,7 @@ const projects: ProjectItem[] = [
     thumbnailSrc: '/projects/bisbees/thumbnail.png',
     href: '/projects/dev/bisbees'
   }
-]
+];
 
 const slideUpAnimation = {
   from: { opacity: 0, transform: 'translateY(20px)' },
@@ -48,22 +48,22 @@ const animationConfig = {
 };
 
 const ProjectViewer = () => {
-  const [hoveredProject, setHoveredProject] = React.useState(projects[0])
+  const [hoveredProject, setHoveredProject] = React.useState(projects[0]);
 
-  const [styles, api] = useSpring(() => (slideUpAnimation))
+  const [styles, api] = useSpring(() => (slideUpAnimation));
 
   const onMouseEnterHandler = (project: ProjectItem) => {
     if (project !== hoveredProject) {
-      setHoveredProject(project)
+      setHoveredProject(project);
       api.start({
         ...slideDownAnimation,
         ...animationConfig,
         onResolve: () => {
           api.start({ ...slideUpAnimation, ...animationConfig })
         }
-      })
+      });
     }
-  }
+  };
 
   return (
     <div className="py-9 w-full flex flex-col items-center">
@@ -108,6 +108,6 @@ const ProjectViewer = () => {
       </animated.div>
     </div>
   )
-}
+};
 
-export default ProjectViewer
+export default ProjectViewer;

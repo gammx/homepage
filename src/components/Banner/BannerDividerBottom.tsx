@@ -1,4 +1,4 @@
-import { animated, useSpring } from 'react-spring'
+import { animated, useSpring } from 'react-spring';
 
 const BannerDividerBottom = () => {
   const { y, opacity } = useSpring({

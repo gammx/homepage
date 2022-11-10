@@ -1,9 +1,9 @@
-import { useEffect, useRef, FC, HTMLAttributes } from 'react'
-import { animated, useSpring, to, AnimatedComponent } from 'react-spring'
-import { useGesture } from 'react-use-gesture'
+import { useEffect, useRef, FC, HTMLAttributes } from 'react';
+import { animated, useSpring, to, AnimatedComponent } from 'react-spring';
+import { useGesture } from 'react-use-gesture';
 
-const calcX = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 20
-const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20
+const calcX = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 20;
+const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20;
 
 type PerspectiveGestureProps = HTMLAttributes<AnimatedComponent<"div">>;
 
@@ -17,19 +17,19 @@ const PerspectiveGesture: FC<PerspectiveGestureProps> = ({ children }) => {
     x: 0,
     y: 0,
     config: { mass: 5, tension: 350, friction: 60 },
-  }))
-  const domTarget = useRef(null)
+  }));
+  const domTarget = useRef(null);
 
   useEffect(() => {
-    const preventDefault = (e: Event) => e.preventDefault()
-    document.addEventListener('gesturestart', preventDefault)
-    document.addEventListener('gesturechange', preventDefault)
+    const preventDefault = (e: Event) => e.preventDefault();
+    document.addEventListener('gesturestart', preventDefault);
+    document.addEventListener('gesturechange', preventDefault);
 
     return () => {
-      document.removeEventListener('gesturestart', preventDefault)
-      document.removeEventListener('gesturechange', preventDefault)
-    }
-  }, [])
+      document.removeEventListener('gesturestart', preventDefault);
+      document.removeEventListener('gesturechange', preventDefault);
+    };
+  }, []);
 
   useGesture(
     {
@@ -59,6 +59,6 @@ const PerspectiveGesture: FC<PerspectiveGestureProps> = ({ children }) => {
       {children}
     </animated.div>
   )
-}
+};
 
-export default PerspectiveGesture
+export default PerspectiveGesture;
