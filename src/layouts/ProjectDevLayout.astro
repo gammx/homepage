@@ -1,0 +1,110 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Footer from "../components/layout/Footer.astro";
+import Layout from "./Layout.astro";
+import techList from "../utils/stack";
+
+type Props = MarkdownLayoutProps<{
+  hero: {
+    theme?: "light" | "dark";
+    src: string;
+    title: string;
+    description: string;
+  };
+  details: {
+    difficulty: string;
+  };
+  links: {
+    repo: string;
+  };
+  about: {
+    src: string;
+    category: string;
+    summary: string;
+    thoughts: string;
+  };
+  screenshots?: string[];
+  stack: string[];
+}>;
+
+const {
+  hero,
+  details,
+  about,
+  screenshots,
+  stack: pickedStack,
+  links
+} = Astro.props.frontmatter;
+
+const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUpperCase() === title.toUpperCase()));
+---
+
+<Layout title={`GAMMX — ${hero.title.toUpperCase()}`} description={about.summary}>
+  <main>
+    <!-- BANNER -->
+    <div
+      class:list={["h-[25rem] sm:h-[37.5rem] flex flex-col bg-cover bg-no-repeat text-smoke", {
+        "text-white": hero.theme === "light"
+      }]}
+      style={`background-image: url(${hero.src})`}
+    >
+      <div class="flex-1 flex justify-between pb-12 pl-5">
+        <div class="flex flex-col justify-end">
+          <h1 class="font-display font-extrabold uppercase text-5xl xs:text-6xl sm:text-[12vw] lg:text-[8rem]">{hero.title}</h1>
+          <p class="font-medium uppercase max-w-xs sm:max-w-sm md:max-w-lg text-xl sm:text-[4vw] lg:text-5xl leading-none">{hero.description}</p>
+        </div>
+        <div class="hidden sm:flex items-end pr-24">
+          <a href={links.repo} target="_blank" class="circle-arrow">
+            <img src="/figures/circle_arrow_down.png" alt="Black arrow inside a circle" class="w-[80px] md:w-[128px]">
+          </a>
+        </div>
+      </div>
+      <div class="flex border-t border-smoke font-mono font-medium text-sm uppercase p-5">
+        <p>{details.difficulty}</p>
+        <p class="ml-10 sm:ml-16">In Development</p>
+      </div>
+    </div>
+    <!-- ABOUT THE PROJECT -->
+    <section class="flex flex-col md:flex-row items-center justify-center text-sm sm:space-x-10 lg:space-x-24 py-20 px-10 lg:p-20">
+      <img src={about.src} alt="Project theme thumbnail" class="max-w-[15rem] sm:max-w-[40vw] lg:max-w-[400px] object-contain">
+      <div class="uppercase pt-8 sm:pt-3 max-w-[37.5rem]">
+        <b>{about.category}</b>
+        <p class="mt-1">About the project</p>
+        <p class="font-medium text-xl lg:text-2xl mt-4 lg:mt-8">{about.summary}</p>
+        <svg width="49" height="8" viewBox="0 0 49 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-8 lg:mt-16 mb-6 lg:mb-8">
+          <path d="M48.3536 4.35355C48.5488 4.15829 48.5488 3.84171 48.3536 3.64645L45.1716 0.464466C44.9763 0.269204 44.6597 0.269204 44.4645 0.464466C44.2692 0.659728 44.2692 0.976311 44.4645 1.17157L47.2929 4L44.4645 6.82843C44.2692 7.02369 44.2692 7.34027 44.4645 7.53553C44.6597 7.7308 44.9763 7.7308 45.1716 7.53553L48.3536 4.35355ZM0 4.5H48V3.5H0L0 4.5Z" fill="#CECECE"/>
+        </svg>
+        <p class="font-medium text-xs">{about.thoughts}</p>
+      </div>
+    </section>
+    <!-- GALLERY -->
+		{screenshots && (
+			<section class="flex flex-col items-center space-y-6 py-16">
+				{screenshots.map((src) => (
+					<img src={src} alt="Website screenshot" class="max-w-[15rem] xs:max-w-[20rem] sm:max-w-[60vw] lg:max-w-[50rem]" />
+				))}
+			</section>
+		)}
+    <!-- STACK  -->
+    <section class="grid grid-cols-1 md:grid-cols-2 uppercase pt-16">
+      <div class="px-8 pb-16 flex flex-col">
+        <h2 class="font-normal text-5xl uppercase mb-6">What's in the box?</h2>
+        <p class="font-normal text-xs">This project is being built using the following technologies.</p>
+        <div class="mt-4 grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8">
+          {stack.map((tech) => tech && (
+            <div class="mt-4 flex justify-center items-center border border-[#1D1D1D] rounded w-12 h-12 grayscale hover:grayscale-0 transition-all duration-500" title={tech.title}>
+              <img src={tech.src} alt={`${tech.title} (logo)`} class="w-[1.125rem]" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="flex items-end justify-end md:justify-start">
+        <img src="/figures/open_cube.png" alt="Isometric striped cube box open from the top" />
+      </div>
+    </section>
+		<!-- SLOT -->
+    <slot />
+		<!-- FOOTER -->
+    <Footer />
+  </main>
+</Layout>

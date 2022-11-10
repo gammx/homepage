@@ -125,9 +125,9 @@ const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUp
       <div class="px-8 pb-16 flex flex-col">
         <h2 class="font-normal text-5xl uppercase mb-6">What's in the box?</h2>
         <p class="font-normal text-xs">This project was built using the following technologies.</p>
-        <div class="mt-8 grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8">
+        <div class="mt-4 grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8">
           {stack.map((tech) => tech && (
-            <div class="flex justify-center items-center border border-[#1D1D1D] rounded w-12 h-12 grayscale hover:grayscale-0 transition-all duration-500" title={tech.title}>
+            <div class="mt-4 flex justify-center items-center border border-[#1D1D1D] rounded w-12 h-12 grayscale hover:grayscale-0 transition-all duration-500" title={tech.title}>
               <img src={tech.src} alt={`${tech.title} (logo)`} class="w-[1.125rem]" />
             </div>
           ))}
