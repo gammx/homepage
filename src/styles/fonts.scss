@@ -27,28 +27,21 @@
     }
 }
 
-@include generateFontFaces('MabryPro', (
-    '/fonts/MabryPro/MabryPro-Light.woff2': 300,
-    '/fonts/MabryPro/MabryPro-LightItalic.woff2': 300,
-    '/fonts/MabryPro/MabryPro-Regular.woff2': 400,
-    '/fonts/MabryPro/MabryPro-RegularItalic.woff2': 400,
-    '/fonts/MabryPro/MabryPro-Medium.woff2': 500,
-    '/fonts/MabryPro/MabryPro-MediumItalic.woff2': 500,
-    '/fonts/MabryPro/MabryPro-Bold.woff2': 700,
-    '/fonts/MabryPro/MabryPro-BoldItalic.woff2': 700,
-    '/fonts/MabryPro/MabryPro-Black.woff2': 900,
-    '/fonts/MabryPro/MabryPro-BlackItalic.woff2': 900
-));
-
-@include generateFontFaces('Ginger', (
-    '/fonts/Ginger/Ginger-Regular.woff': 400
-));
-
-@include generateFontFaces('Miedinger', (
-    '/fonts/Miedinger/Miedinger-Regular.woff': 400,
-    '/fonts/Miedinger/Miedinger-Regular.woff2': 400,
-    '/fonts/Miedinger/Miedinger-Bold.woff': bold,
-    '/fonts/Miedinger/Miedinger-Bold.woff2': bold,
+@include generateFontFaces('Aeonik', (
+    '/fonts/Aeonik/Aeonik-Air.woff2': 100,
+    '/fonts/Aeonik/Aeonik-AirItalic.woff2': 100,
+    '/fonts/Aeonik/Aeonik-Thin.woff2': 200,
+    '/fonts/Aeonik/Aeonik-ThinItalic.woff2': 200,
+    '/fonts/Aeonik/Aeonik-Light.woff2': 300,
+    '/fonts/Aeonik/Aeonik-LightItalic.woff2': 300,
+    '/fonts/Aeonik/Aeonik-Regular.woff2': 400,
+    '/fonts/Aeonik/Aeonik-RegularItalic.woff2': 400,
+    '/fonts/Aeonik/Aeonik-Medium.woff2': 600,
+    '/fonts/Aeonik/Aeonik-MediumItalic.woff2': 600,
+    '/fonts/Aeonik/Aeonik-Bold.woff2': 700,
+    '/fonts/Aeonik/Aeonik-BoldItalic.woff2': 700,
+    '/fonts/Aeonik/Aeonik-Black.woff2': 800,
+    '/fonts/Aeonik/Aeonik-BlackItalic.woff2': 800,
 ));
 
 @include generateFontFaces('IBM Plex Mono', (

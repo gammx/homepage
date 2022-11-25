@@ -12,13 +12,13 @@ module.exports = {
 				'2xs': '0.625rem',
 			},
 			screens: {
-				'xs': '330px'
+				'xs': '330px',
+				'2md': '860px'
 			}
 		},
 		fontFamily: {
-			brand: ['Miedinger'],
 			display: ['Sohnebreit'],
-			sans: ['MabryPro', 'sans-serif'],
+			sans: ['Aeonik', 'sans-serif'],
 			mono: ['IBM Plex Mono', 'monospace'],
 		},
 		colors: {
@@ -27,7 +27,7 @@ module.exports = {
 			'smoke': '#0B0B0B',
 			'bones': '#EFEFEF',
 			'primary': '#CECECE',
-			'accent': '#F63A22',
+			'accent': '#F42C12',
 		},
 	},
 	plugins: [],
