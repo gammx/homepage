@@ -27,10 +27,6 @@
     }
 }
 
-@include generateFontFaces('Ginger', (
-    '/fonts/Ginger/Ginger-Regular.woff': 400
-));
-
 @include generateFontFaces('Aeonik', (
     '/fonts/Aeonik/Aeonik-Air.woff2': 100,
     '/fonts/Aeonik/Aeonik-AirItalic.woff2': 100,
@@ -46,13 +42,6 @@
     '/fonts/Aeonik/Aeonik-BoldItalic.woff2': 700,
     '/fonts/Aeonik/Aeonik-Black.woff2': 800,
     '/fonts/Aeonik/Aeonik-BlackItalic.woff2': 800,
-));
-
-@include generateFontFaces('Miedinger', (
-    '/fonts/Miedinger/Miedinger-Regular.woff': 400,
-    '/fonts/Miedinger/Miedinger-Regular.woff2': 400,
-    '/fonts/Miedinger/Miedinger-Bold.woff': bold,
-    '/fonts/Miedinger/Miedinger-Bold.woff2': bold,
 ));
 
 @include generateFontFaces('IBM Plex Mono', (

@@ -17,7 +17,6 @@ module.exports = {
 			}
 		},
 		fontFamily: {
-			brand: ['Miedinger'],
 			display: ['Sohnebreit'],
 			sans: ['Aeonik', 'sans-serif'],
 			mono: ['IBM Plex Mono', 'monospace'],
