@@ -5,7 +5,7 @@ import Section from '../components/UI/Section.astro';
 import Divider from '../components/UI/Divider.astro';
 import Skill from '../components/UI/Skill.astro';
 import stack from '../utils/stack';
-import ProjectViewer from '../components/ProjectViewer';
+import ProjectList from '../components/ProjectList';
 import SectionLink from '../components/SectionLink';
 import Footer from '../components/layout/Footer.astro';
 import Hero from '../components/layout/Hero.astro';
@@ -27,12 +27,11 @@ const currentYear = new Date().getFullYear();
       <Button>Download Resume</Button>
     </Section>
     <!-- --- STACK --- -->
-    <Section>
-      <Divider>WHAT DO I USE</Divider>
-      <p class="mt-2 mb-4 text-sm">
-        Here's a list of the technologies I work with, the brighter, the better
-        I am.
-      </p>
+    <section class="px-2.5 py-20">
+      <div class="text-xs flex space-x-3 mb-8">
+				<h2 class="uppercase text-[#858585]">What Do I Use</h2>
+				<p>Here's a list of the technologies I work with, the brighter, the better I am.</p>
+			</div>
       <div
         class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4"
       >
@@ -44,26 +43,9 @@ const currentYear = new Date().getFullYear();
           ))
         }
       </div>
-    </Section>
-    <!-- --- MARQUEES --- -->
-    <!--<div class="my-6">
-      <Marquee client:load className="font-display font-semibold">
-        <span>FRONTEND</span>
-        <span>BACKEND</span>
-        <span>UI/UX</span>
-        <span>RESPONSIVE</span>
-        <span>PERFORMANT</span>
-      </Marquee>
-      <Marquee client:load direction="right" className="font-sans uppercase">
-        {stack.map((skill) => <span>{skill.title}</span>)}
-      </Marquee>
-    </div>-->
+    </section>
     <!-- --- PROJECTS --- -->
-    <Section class="flex flex-col items-center">
-      <Divider>Projects</Divider>
-      <div class="text-sm my-2">I'm currently working on filling this up</div>
-      <ProjectViewer client:load />
-    </Section>
+    <ProjectList client:load />
     <!-- --- SECTION LINKS --- -->
     <div class="w-full grid grid-rows-2 sm:grid-rows-1 sm:grid-flow-col sm:grid-cols-2 h-52 border-t border-primary">
       <SectionLink

@@ -12,7 +12,8 @@ module.exports = {
 				'2xs': '0.625rem',
 			},
 			screens: {
-				'xs': '330px'
+				'xs': '330px',
+				'2md': '860px'
 			}
 		},
 		fontFamily: {
