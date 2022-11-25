@@ -18,7 +18,7 @@ module.exports = {
 		fontFamily: {
 			brand: ['Miedinger'],
 			display: ['Sohnebreit'],
-			sans: ['MabryPro', 'sans-serif'],
+			sans: ['Aeonik', 'sans-serif'],
 			mono: ['IBM Plex Mono', 'monospace'],
 		},
 		colors: {
