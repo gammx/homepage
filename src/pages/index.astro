@@ -6,104 +6,16 @@ import Divider from '../components/UI/Divider.astro';
 import Skill from '../components/UI/Skill.astro';
 import stack from '../utils/stack';
 import ProjectViewer from '../components/ProjectViewer';
-import PerspectiveGesture from '../components/PerspectiveGesture';
-import BannerDividerBottom from '../components/Banner/BannerDividerBottom';
-import BannerDividerTop from '../components/Banner/BannerDividerTop';
 import SectionLink from '../components/SectionLink';
 import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/layout/Hero.astro';
 
 const currentYear = new Date().getFullYear();
 ---
 
 <Layout title="GAMMX">
   <main class="flex flex-col">
-    <div class="w-full pt-16 px-8 sm:px-16 md:px-24">
-      <BannerDividerTop client:load />
-      <div class="flex flex-wrap justify-between items-center text-primary">
-        <!-- --- OCCUPATION --- -->
-        <div class="font-mono uppercase text-2xs sm:text-[1.4vw] flex items-center justify-between w-full sm:w-auto gap-4 xl:block xl:text-base">
-          <p>Software Developer</p>
-          <p>UI/UX Designer</p>
-          <p class="text-white/50 text-xs xl:mt-1.5">&copy; {currentYear}</p>
-        </div>
-        <div class="w-full xl:hidden"></div>
-        <!-- --- HEADING --- -->
-        <PerspectiveGesture client:load>
-          <h1 class="font-brand font-bold text-[9vw] md:text-[6.2vw] leading-[64px]">
-            GAMMX
-          </h1>
-        </PerspectiveGesture>
-        <!-- --- BADGES --- -->
-        <div class="hidden md:flex flex-col justify-center gap-1 font-mono text-xs">
-          <PerspectiveGesture client:load>
-            <div
-              class="hidden lg:flex justify-center items-center h-[22px] border border-primary/70 rounded-full"
-            >
-              YAHIR GOMEZ NOY.
-            </div>
-          </PerspectiveGesture>
-          <div class="flex gap-1">
-            <PerspectiveGesture client:load>
-              <img src="/22/22_thegrid.svg" alt="THE GRID 22" width="60" height="36" />
-            </PerspectiveGesture>
-            <PerspectiveGesture client:load>
-              <div
-                class="hidden min-[850px]:flex flex-col justify-center rounded-md border border-primary/70 px-1 py-[2px] tracking-[0.04em]"
-              >
-                <span># 0B0B0B</span>
-                <span># CECECE</span>
-              </div>
-            </PerspectiveGesture>
-          </div>
-        </div>
-        <!-- --- SHAPE AND NUMBER --- -->
-        <img
-          src="/22/22_shape.png"
-          alt="3d white shape with synthwave style"
-          class="hidden md:block w-[4.8vw] h-[4.8vw]"
-        />
-        <div>
-          <h1 class="font-brand font-bold text-[9vw] md:text-[6.2vw] leading-[64px]">
-            22
-          </h1>
-        </div>
-      </div>
-      <div class="grid grid-flow-row sm:grid-flow-col gap-3 sm:gap-8 sm:mt-4 overflow-hidden">
-        <picture class="col-span-12 sm:col-span-8">
-          <source srcset="/22/webp/22_banner.webp" type="image/webp" />
-          <source srcset="/22/22_banner.png" type="image/png" />
-          <img
-            src="/22/webp/22_banner.webp"
-            alt="Gradient (tones of pink) background"
-            class="w-full h-full"
-          />
-        </picture>
-        <picture class="col-span-12 sm:col-span-4">
-          <source srcset="/22/webp/22_creator.webp" type="image/webp" />
-          <source srcset="/22/22_creator.png" type="image/png" />
-          <img
-            src="/22/webp/22_creator.webp"
-            alt="Me holding a phone, sitting in front of a computer"
-            class="w-full h-full object-cover"
-          />
-        </picture>
-      </div>
-      <div class="flex flex-wrap items-center sm:gap-4 py-6 font-mono uppercase text-primary">
-        <img
-          src="/22/22_code.svg"
-          alt="Bar code with 'GAMMX' as value"
-          class="sm:w-auto"
-          width="48"
-          height="20"
-        />
-        <span class="flex-1 sm:flex-initial text-xs sm:text-base ml-4 sm:ml-0">
-          Always looking for the most dope projects
-        </span>
-        <div class="sm:flex-1 w-full sm:w-auto mt-4 sm:mt-0">
-          <BannerDividerBottom client:load />
-        </div>
-      </div>
-    </div>
+    <Hero />
     <!-- --- RESUME --- -->
     <Section class="flex flex-col items-center">
       <Divider>WHO AM I</Divider>

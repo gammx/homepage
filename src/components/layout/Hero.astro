@@ -1,0 +1,37 @@
+---
+import PerspectiveGesture from '../PerspectiveGesture';
+
+const currentYear = new Date().getFullYear();
+---
+
+<div class="bg-accent text-smoke h-screen w-full flex flex-col uppercase text-xs font-mono font-normal p-2.5">
+	<div class="flex justify-between">
+		<div class="flex flex-col space-y-1">
+			<div class="w-[22px] h-[22px] bg-smoke text-accent tracking-tighter flex items-center justify-center">
+				22
+			</div>
+			<p>Software Developer</p>
+			<p>UI/UX Developer</p>
+		</div>
+		<div>
+			<svg width="8" height="33" viewBox="0 0 8 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M3.64645 32.3536C3.84171 32.5488 4.15829 32.5488 4.35355 32.3536L7.53553 29.1716C7.7308 28.9763 7.7308 28.6597 7.53553 28.4645C7.34027 28.2692 7.02369 28.2692 6.82843 28.4645L4 31.2929L1.17157 28.4645C0.976311 28.2692 0.659728 28.2692 0.464466 28.4645C0.269204 28.6597 0.269204 28.9763 0.464466 29.1716L3.64645 32.3536ZM3.5 0L3.5 32H4.5L4.5 0L3.5 0Z" fill="black"/>
+			</svg>
+		</div>
+	</div>
+	<div class="flex-1 flex justify-center items-center">
+		<PerspectiveGesture client:load>
+			<img src="/22/the__creator.png" alt="me during an epic fight vs coding">
+		</PerspectiveGesture>
+	</div>
+	<div class="flex justify-between">
+		<div class="flex space-x-4 sm:space-x-6">
+			<a href="https://twitter.com/22gammx">Twitter</a>
+			<a href="https://instagram.com/yahirgnn">Instagram</a>
+			<a href="#">LinkedIn</a>
+		</div>
+		<div>
+			<p>&copy; {currentYear}</p>
+		</div>
+	</div>
+</div>

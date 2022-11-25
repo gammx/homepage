@@ -87,3 +87,23 @@ body {
         transform: rotate(-90deg) scale(1.1);
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0b0b0b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-accent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff4930;
+}

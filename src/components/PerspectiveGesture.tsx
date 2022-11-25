@@ -2,8 +2,8 @@ import { useEffect, useRef, FC, HTMLAttributes } from 'react';
 import { animated, useSpring, to, AnimatedComponent } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 
-const calcX = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 20;
-const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20;
+const calcX = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 6;
+const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 6;
 
 type PerspectiveGestureProps = HTMLAttributes<AnimatedComponent<"div">>;
 
