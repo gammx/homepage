@@ -29,6 +29,7 @@ type Props = MarkdownLayoutProps<{
     summary: string;
     thoughts: string;
   };
+  previewSrc?: string;
   interludeSrc: string;
   screenshots: string[];
   features: string[];
@@ -40,6 +41,7 @@ const {
   details,
   about,
   interludeSrc,
+  previewSrc,
   screenshots,
   features: pickedFeatures,
   stack: pickedStack,
@@ -95,14 +97,17 @@ const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUp
       class="h-[12.5rem] md:h-[18.75rem] bg-cover bg-center"
       style={`background-image: url(${interludeSrc})`}
     />
-
+    {previewSrc && (
+      <section class="flex flex-col items-center space-y-6 py-16">
+        <video autoplay loop muted src={previewSrc} class="max-w-[15rem] xs:max-w-[20rem] sm:max-w-[60vw] lg:max-w-[50rem]"></video>
+      </section>
+    )}
     <!-- GALLERY -->
     <section class="flex flex-col items-center space-y-6 py-16">
       {screenshots.map((src) => (
         <img src={src} alt="Website screenshot" class="max-w-[15rem] xs:max-w-[20rem] sm:max-w-[60vw] lg:max-w-[50rem]" />
       ))}
     </section>
-
     <!-- PROJECT FEATURES -->
     <section class="grid grid-cols-12 border-t border-b border-primary">
       <div class="pt-16 pb-32 md:pb-44 px-8 col-span-12 md:col-span-8 order-last md:order-first md:border-r border-primary">
@@ -120,7 +125,6 @@ const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUp
         <img src={`/figures/spline_${splineIndex}.png`} alt="Monochromatic paint doodle">
       </div>
     </section>
-
     <!-- STACK  -->
     <section class="grid grid-cols-1 md:grid-cols-2 uppercase pt-16">
       <div class="px-8 pb-16 flex flex-col">
