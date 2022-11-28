@@ -1,21 +1,31 @@
 ---
-layout: "../../../layouts/ProjectDevLayout.astro"
+layout: "../../../layouts/ProjectLayout.astro"
 hero: {
 	src: "/projects/bisbees/banner.png",
 	title: "Bisbee's",
 	description: "Site for a fishing tournament",
 }
 details: {
-	difficulty: "Not So Easy"
+	difficulty: "Not So Easy",
+	createdAt: "2022-11-14",
+  duration: "9 days",
 }
 links: {
-	repo: "https://github.com/gammx/bisbees"
+	site: "https://bisbees.gammx.tech",
+	repo: "https://github.com/gammx/bisbees",
 }
 about: {
 	src: "/projects/bisbees/about_thumbnail.png",
-  category: "Static Website",
-  summary: "A re-designed vision for the website of the most ambitious fishing tournament in the world.",
-  thoughts: "It is more complex than the Cipriani's landing page, so I'm gonna use an advanced stack. I chose TypeScript over JavaScript as the project may scale in the future, I'll use TailwindCSS to speed up the process, SASS will provide us more complex solutions. Next.js is the cherry on the cake.",
+  category: "Website",
+  summary: "A re-designed vision for the website of the most ambitious fishing tournaments in the world.",
+  thoughts: "I had so much fun building this project, it started as a little static page and became a fully dynamic landing page. Every color and style was made to give a high-end classy but modern feel of Bisbee's and Los Cabos. I mean, it's the richest tournaments in the world, they deserve better.",
 }
-stack: ["css", "sass", "tailwind css", "typescript", "next.js", "git", "figma"]
+interludeSrc: "/projects/bisbees/interlude.png"
+screenshots: [
+  "/projects/bisbees/gallery_item_1.png",
+  "/projects/bisbees/gallery_item_2.png",
+  "/projects/bisbees/gallery_item_3.png"
+]
+stack: ["css", "sass", "tailwind css", "typescript", "next.js", "mongo db", "prisma db", "git", "figma"]
+features: ["responsive", "practices", "performant", "dynamic", "cached", "animated"]
 ---

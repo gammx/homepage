@@ -24,5 +24,20 @@ export default [
     id: 'parallax',
     title: 'Batteries Included',
     description: 'Parallax animation effects without any external libraries.',
+  },
+  {
+    id: 'dynamic',
+    title: "Born Dynamic",
+    description: "It connects to a database to bring the necessary data."
+  },
+  {
+    id: 'cached',
+    title: "0% Patience",
+    description: "The queries are cached so we don't waste time/user resources."
+  },
+  {
+    id: 'animated',
+    title: "Always Moving",
+    description: "Animated elements moving around the page, you got 'em."
   }
 ] as Feature[];
