@@ -8,9 +8,12 @@ import techList from "../utils/stack";
 
 type Props = MarkdownLayoutProps<{
   // Define frontmatter props here
-  title: string;
-  description: string;
-  bannerSrc: string;
+  hero: {
+    theme?: "light" | "dark";
+    src: string;
+    title: string;
+    description: string;
+  };
   details: {
     createdAt: string;
     difficulty: string;
@@ -33,9 +36,7 @@ type Props = MarkdownLayoutProps<{
 }>;
 
 const {
-  title,
-  description,
-  bannerSrc,
+  hero,
   details,
   about,
   interludeSrc,
@@ -51,17 +52,17 @@ const features = pickedFeatures.map((id) => featureList.find((feature) => featur
 const stack = pickedStack.map((title) => techList.find((tech) => tech.title.toUpperCase() === title.toUpperCase()));
 ---
 
-<Layout title={`GAMMX — ${title.toUpperCase()}`} description={about.summary}>
+<Layout title={`GAMMX — ${hero.title.toUpperCase()}`} description={about.summary}>
   <main>
     <!-- BANNER -->
     <div
       class="h-[25rem] sm:h-[37.5rem] flex flex-col bg-cover bg-no-repeat text-smoke"
-      style={`background-image: url(${bannerSrc})`}
+      style={`background-image: url(${hero.src})`}
     >
       <div class="flex-1 flex justify-between pb-12 pl-5">
         <div class="flex flex-col justify-end">
-          <h1 class="font-display font-extrabold uppercase text-5xl xs:text-6xl sm:text-[12vw] lg:text-[8rem]">{title}</h1>
-          <p class="font-medium uppercase max-w-xs sm:max-w-sm md:max-w-lg text-xl sm:text-[4vw] lg:text-5xl leading-none">{description}</p>
+          <h1 class="font-display font-extrabold uppercase text-5xl xs:text-6xl sm:text-[12vw] lg:text-[8rem]">{hero.title}</h1>
+          <p class="font-medium uppercase max-w-xs sm:max-w-sm md:max-w-lg text-xl sm:text-[4vw] lg:text-5xl leading-none">{hero.description}</p>
         </div>
         <div class="hidden sm:flex items-end pr-24">
           <a href={links.site} target="_blank" class="circle-arrow">
