@@ -15,7 +15,7 @@ const projects: ProjectItem[] = [
     description: "A re-designed vision for the website of the world's richest fishing tournaments.",
     createdAt: '2022',
     thumbnailSrc: '/projects/bisbees/thumbnail.png',
-    href: '/projects/dev/bisbees'
+    href: '/projects/bisbees'
   },
 	{
     name: "Cipriani's",
